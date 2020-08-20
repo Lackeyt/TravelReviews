@@ -13,7 +13,7 @@ namespace TravelReviews.Models
     public string LocationCountry {get;set;}
     public string ReviewText {get;set;}
 
-    public static List<Review> GetReviews()
+    public static List<Review> GetReviews() //correct according to lesson
     {
       var apiCallTask = ApiHelper.GetAll();
       var result = apiCallTask.Result;
