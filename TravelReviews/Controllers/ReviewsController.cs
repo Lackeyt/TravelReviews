@@ -12,7 +12,7 @@ namespace TravelReviews.Controllers
     public IActionResult Index()
     {
       var allReviews = Review.GetReviews();
-      return View(allReviews);
+      return View(allReviews); ///capital M model referes to what's passed into the view
     }
 
     [HttpPost]
@@ -25,7 +25,7 @@ namespace TravelReviews.Controllers
     public IActionResult Details(int id)
     {
       var review = Review.GetDetails(id);
-      return View(review);
+      return View(review); //single review object -- capital M refers to a single review object
     }
 
     public IActionResult Edit(int id)
@@ -47,5 +47,7 @@ namespace TravelReviews.Controllers
       Review.Delete(id);
       return RedirectToAction("Index");
     }
+
+  //   public IActionResult Create(int id, )
   }
 }

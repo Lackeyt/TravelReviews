@@ -1,0 +1,16 @@
+@using TravelReviews.Models; 
+
+<h1>Edit Info:</h1>
+<form action="/Reviews/Details/@(Model.ReviewId)" method="post">
+  <label for="userName">User Name</label>
+  <input id="userName" name="userName" type="text" value="@(Model.UserName)">
+  <label for="locationCountry">Country</label>
+  <input id="locationCountry" name="locationCountry" type="text" value="@(Model.LocationCountry)">
+  <label for="locationCity">City</label>
+  <input id="locationCity" name="locationCity" type="text" value="@(Model.LocationCity)">
+  <label for="reviewText">Review</label>
+  <input id="reviewText" name="reviewText" type="text" value="@(Model.ReviewText)">
+  <button type="submit">Go!</button>
+</form>
+
+<a href="/Reviews/Details/@(Model.ReviewId)"><p>Return to Details</p></a>

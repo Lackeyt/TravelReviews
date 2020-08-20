@@ -22,7 +22,7 @@ namespace TravelReviews.Models
     }
 
     public static async Task Post (string newReview)
-    //All post reuqests must have header and body so API can register data types and correctly register an argument for the controller
+    //All post requests must have header and body so API can register data types and correctly register an argument for the controller
     {
       RestClient client = new RestClient("http://localhost:5000/api");
       RestRequest request = new RestRequest($"reviews", Method.POST);
@@ -35,7 +35,7 @@ namespace TravelReviews.Models
     {
       RestClient client = new RestClient("http://localhost:5000/api");
       RestRequest request = new RestRequest($"reviews/{id}", Method.PUT);
-      request.AddHeader("Content-Type", "applictaion/json");
+      request.AddHeader("Content-Type", "application/json");
       request.AddJsonBody(newReview);
       var response = await client.ExecuteTaskAsync(request);
     }

@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+
+@using TravelReviews.Models;
+@model TravelReviews.Models.Review; 
+
+<h4>Add a new Review</h4>
+
+<h1>Create Info:</h1>
+<form action="/Reviews/Create/@(Model.ReviewId)" method="put">
+  <label for="userName">User Name</label>
+  <input id="userName" name="userName" type="text" value="@(Model.UserName)">
+  <label for="locationCountry">Country</label>
+  <input id="locationCountry" name="locationCountry" type="text" value="@(Model.LocationCountry)">
+  <label for="locationCity">City</label>
+  <input id="locationCity" name="locationCity" type="text" value="@(Model.LocationCity)">
+  <label for="reviewText">Review</label>
+  <input id="reviewText" name="reviewText" type="text" value="@(Model.ReviewText)">
+  <button type="submit">Go!</button>
+</form>

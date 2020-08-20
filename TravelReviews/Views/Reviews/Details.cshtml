@@ -1,0 +1,27 @@
+@{
+  Layout="_Layout";
+}
+
+@using TravelReviews.Models;
+@model TravelReviews.Models.Review; 
+
+
+<ul>
+  <li>User Name: @Model.UserName</li>
+  <li>Location: @Model.LocationCity, @Model.LocationCountry</li>
+  <li>Review: @Model.ReviewText</li>
+</ul>
+
+@using (Html.BeginForm("Delete","Reviews"))
+{   
+    @Html.Hidden("Id", Model.ReviewId)
+    <input type="submit" value="Delete" />
+}
+@using (Html.BeginForm("Edit","Reviews"))
+{   
+    @Html.Hidden("Id", Model.ReviewId)
+    <input type="submit" value="Edit" />
+}
+
+<a href="/Reviews"><p>Back</p></a>
+

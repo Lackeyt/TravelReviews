@@ -1,13 +1,18 @@
-<h1>All Reviews: </h1>
+<div class="text-center jumbotron">
+    <h1 class="display-4">Reviews</h1>
+</div>
+
+@using TravelReviews.Models;
+@* @model TravelReviews.Models.Review; *@
 
 <ol>
-@foreach (Review review in Model)
-{
-<ul>
-  <li>User Name: @review.UserName</li>
-  <li>Location: @review.LocationCity, @review.LocationCountry</li>
-</ul>
-<a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
-<br>
-}
+  @foreach (Review review in Model) ///review = each object in the list of reviews that is passed through the view --> Model is what's passed through the view
+  {
+    <ul>
+    <li>User Name: @review.UserName</li>
+    <li>Location: @review.LocationCity, @review.LocationCountry</li>
+    </ul>
+  <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
+  <br>
+  }
 </ol>
